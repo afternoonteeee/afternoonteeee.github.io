@@ -1,0 +1,25 @@
+$().ready(function(){
+	$('#form').submit(function(){
+		var query = $(this).children('input=["name"]').val();
+		if(!query) return false;
+		$.ajax({
+			url : 'https://api.twitter.com/1.1/search/tweets.json',
+			data : {
+				q : query + ' instagram.com',
+				lang : 'ja',
+				count : '100',
+				include_entities : 1
+			},
+			dataType : 'jsonp',
+			success : function(json){
+				var entries = json.results;
+				if (!entries) return;
+				$.each(entries,function(){
+					console.log(this);
+				});
+			}
+		});
+		return false;
+		});
+});
+

@@ -24,15 +24,16 @@
 <script>
 jQuery(function($) {
 		$('.instagram').on('willLoadInstagram', function(event, options) {
+			clientId: '3dd9d03019dd455c8526a0a3c888ccc5',
 			console.log(options);
 			});
 		$('.instagram').on('didLoadInstagram', function(event, response) {
+			clientId: '3dd9d03019dd455c8526a0a3c888ccc5',
 			console.log(response);
 			});
 		$('.instagram').instagram({
 			hash: 'love',
-			clientId: '3dd9d03019dd455c8526a0a3c888ccc5',
-			accessToken: '9cc8b71ea1954b64933283caff57e1ef'
+			clientId: '3dd9d03019dd455c8526a0a3c888ccc5'
 		});
 });
 </script>
